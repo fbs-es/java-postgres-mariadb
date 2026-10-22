@@ -1,0 +1,37 @@
+{
+    "name": "Java 21 & PostgreSQL & MariaDB",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22"
+        }
+    },
+    "forwardPorts": [
+        "postgres:5432",
+        "mariadb:3306"
+    ],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "java.compile.nullAnalysis.mode": "automatic",
+                "editor.suggestSelection": "first",
+                "editor.formatOnSave": true
+            },
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-gradle",
+                "usernamehw.errorlens",
+                "sonarsource.sonarlint-vscode",
+                "streetsidesoftware.code-spell-checker",
+                "mtxr.sqltools",
+                "mtxr.sqltools-driver-pg",
+                "mtxr.sqltools-driver-mysql"
+            ]
+        }
+    },
+    "postCreateCommand": "java -version && gradle -v && gum --version",
+    "remoteUser": "vscode"
+}
