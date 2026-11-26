@@ -12,7 +12,7 @@ subprojects {
     }
 
     dependencies {
-        implementation 'org.postgresql:postgresql:42.7.14'
+        implementation 'org.postgresql:postgresql:42.7.15'
         implementation 'org.mariadb.jdbc:mariadb-java-client:3.5.11'
 
         testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
